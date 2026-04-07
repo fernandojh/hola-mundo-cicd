@@ -20,7 +20,7 @@ jobs:
 
       # Paso 2: Ejecutar un comando simple
       - name: Ejecutar saludo
-        run: echo "¡Hola Mundo! Este es mi primer Pipeline de CI/CD."
+        run: echo "¡Hola Mundo de NUEVO! Este es mi segundo Pipeline de CI/CD."
 
       # Paso 3: Simular una "prueba" exitosa
       - name: Verificando el sistema
