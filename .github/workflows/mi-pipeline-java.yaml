@@ -1,0 +1,23 @@
+name: Mi Primer CI con Java
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Descargar el código del repo
+        uses: actions/checkout@v4
+
+      - name: 2. Configurar el entorno de Java (JDK 17)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: 3. Compilar el programa
+        run: javac HolaMundo.java
+
+      - name: 4. Ejecutar el programa
+        run: java HolaMundo
