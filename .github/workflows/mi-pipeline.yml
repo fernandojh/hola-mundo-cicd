@@ -1,0 +1,30 @@
+# Nombre del flujo de trabajo
+name: Mi Primer CI con Hola Mundo
+
+# 1. El Trigger: ¿Cuándo se debe ejecutar?
+on:
+  push:
+    branches: [ "main" ] # Se activa cada vez que subas algo a la rama main
+
+# 2. Los Jobs: ¿Qué es lo que va a hacer?
+jobs:
+  saludo:
+    # El sistema operativo donde correrá (un servidor de GitHub)
+    runs-on: ubuntu-latest
+
+    # Los pasos secuenciales de este trabajo
+    steps:
+      # Paso 1: Descargar el código del repositorio al servidor
+      - name: Descargando código
+        uses: actions/checkout@v4
+
+      # Paso 2: Ejecutar un comando simple
+      - name: Ejecutar saludo
+        run: echo "¡Hola Mundo de NUEVO! Este es mi primer Pipeline de CI/CD."
+
+      # Paso 3: Simular una "prueba" exitosa
+      - name: Verificando el sistema
+        run: |
+          echo "Verificando componentes..."
+          uptime
+          echo "Todo listo y funcionando."
